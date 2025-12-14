@@ -1,25 +1,26 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import { TodoListWithLoading } from './TodoList';
+import { useState, useEffect } from 'react'
+import './App.css'
+import { TodoListWithLoading } from './TodoList'
 
 export type ToDo = {
-  title: string;
-};
+  title: string
+  id: number
+}
 
 function App() {
-  const [todos, setTodos] = useState<ToDo[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [todos, setTodos] = useState<ToDo[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => response.json())
       .then((json) => {
-        setTodos(json);
-        setLoading(false);
-      });
-  }, []);
+        setTodos(json)
+        setLoading(false)
+      })
+  }, [])
 
-  return <TodoListWithLoading isLoading={loading} todos={todos} />;
+  return <TodoListWithLoading isLoading={loading} todos={todos} />
 }
 
-export default App;
+export default App

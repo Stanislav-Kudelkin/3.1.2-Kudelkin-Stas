@@ -1,5 +1,5 @@
-import './App.css';
+import './App.css'
 
 export const Loader = () => {
-  return <div className="loader"></div>;
-};
+  return <div className="loader"></div>
+}

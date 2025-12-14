@@ -1,18 +1,18 @@
-import { withLoading } from './withLoadingHOC';
-import { ToDo } from './App';
+import { withLoading } from './withLoadingHOC'
+import { ToDo } from './App'
 
 type Props = {
-  todos: ToDo[];
-};
+  todos: ToDo[]
+}
 
 const TodoList = ({ todos }: Props) => {
   return (
     <ol>
       {todos.map((todo) => (
-        <li>{todo.title}</li>
+        <li key={todo.id}>{todo.title}</li>
       ))}
     </ol>
-  );
-};
+  )
+}
 
-export const TodoListWithLoading = withLoading(TodoList);
+export const TodoListWithLoading = withLoading(TodoList)
